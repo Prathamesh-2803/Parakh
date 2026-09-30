@@ -1,11 +1,11 @@
 /**
  * API configuration and resilient fetch helper.
  * Connects to live backend when available; seamlessly falls back
- * to built-in intelligence if the tunnel is sleeping or offline.
+ * to built-in compliance intelligence if the tunnel is sleeping or offline.
  */
 export const API_BASE = import.meta.env.VITE_API_BASE_URL !== undefined
   ? import.meta.env.VITE_API_BASE_URL
-  : (import.meta.env.DEV ? '' : 'https://however-hunt-motorcycles-church.trycloudflare.com');
+  : (import.meta.env.DEV ? '' : 'https://specific-anna-revenues-pulled.trycloudflare.com');
 
 /**
  * Executes a fetch with a 3.5s timeout.
