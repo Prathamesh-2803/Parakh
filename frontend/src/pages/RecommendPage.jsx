@@ -23,6 +23,7 @@ import { CitationModal } from '../components/CitationModal';
 import { CitationChip } from '../components/CitationChip';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { MicButton } from '../components/MicButton';
+import { API_BASE } from '../apiConfig';
 import { FeedbackButtons } from '../components/FeedbackButtons';
 
 const TRANSLATIONS = {
@@ -280,7 +281,7 @@ export default function RecommendPage() {
     setScanMetadata(null);
 
     try {
-      const response = await fetch('/recommend', {
+      const response = await fetch(`${API_BASE}/recommend`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -354,7 +355,7 @@ export default function RecommendPage() {
     }
 
     try {
-      const response = await fetch('/scan', {
+      const response = await fetch(`${API_BASE}/scan`, {
         method: 'POST',
         body: formData
       });

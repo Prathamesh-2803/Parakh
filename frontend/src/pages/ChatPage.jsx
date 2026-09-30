@@ -19,6 +19,7 @@ import { FollowUpChip } from '../components/FollowUpChip';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { MicButton } from '../components/MicButton';
 import { FeedbackButtons } from '../components/FeedbackButtons';
+import { API_BASE } from '../apiConfig';
 
 const REFERENCE_STANDARDS = [
   {
@@ -160,7 +161,7 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/chat', {
+      const response = await fetch(`${API_BASE}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ThumbsUp, ThumbsDown, Check, MessageSquare } from 'lucide-react';
+import { API_BASE } from '../apiConfig';
 
 export function FeedbackButtons({
   question = '',
@@ -30,7 +31,7 @@ export function FeedbackButtons({
   const submitFeedback = async (selectedRating, comment) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch('/feedback', {
+      const response = await fetch(`${API_BASE}/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

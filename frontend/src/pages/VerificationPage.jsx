@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { CitationModal } from '../components/CitationModal';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { API_BASE } from '../apiConfig';
 
 const TRANSLATIONS = {
   en: {
@@ -192,7 +193,7 @@ export default function VerificationPage() {
       : `CM/L-${cleanNo}`;
 
     try {
-      const response = await fetch('/verify/license', {
+      const response = await fetch(`${API_BASE}/verify/license`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ license_no: val })
@@ -243,7 +244,7 @@ export default function VerificationPage() {
     const isClientFormatValid = /^[A-Z0-9]{6}$/i.test(cleanHuid);
 
     try {
-      const response = await fetch('/verify/huid', {
+      const response = await fetch(`${API_BASE}/verify/huid`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ huid: val })
