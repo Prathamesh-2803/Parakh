@@ -1,12 +1,12 @@
 {
   "framework": "vite",
   "rewrites": [
-    { "source": "/chat", "destination": "https://supervision-explaining-casting-arrange.trycloudflare.com/chat" },
-    { "source": "/recommend", "destination": "https://supervision-explaining-casting-arrange.trycloudflare.com/recommend" },
-    { "source": "/verify/:path*", "destination": "https://supervision-explaining-casting-arrange.trycloudflare.com/verify/:path*" },
-    { "source": "/scan", "destination": "https://supervision-explaining-casting-arrange.trycloudflare.com/scan" },
-    { "source": "/feedback", "destination": "https://supervision-explaining-casting-arrange.trycloudflare.com/feedback" },
-    { "source": "/health", "destination": "https://supervision-explaining-casting-arrange.trycloudflare.com/health" },
+    { "source": "/chat", "destination": "https://however-hunt-motorcycles-church.trycloudflare.com/chat" },
+    { "source": "/recommend", "destination": "https://however-hunt-motorcycles-church.trycloudflare.com/recommend" },
+    { "source": "/verify/:path*", "destination": "https://however-hunt-motorcycles-church.trycloudflare.com/verify/:path*" },
+    { "source": "/scan", "destination": "https://however-hunt-motorcycles-church.trycloudflare.com/scan" },
+    { "source": "/feedback", "destination": "https://however-hunt-motorcycles-church.trycloudflare.com/feedback" },
+    { "source": "/health", "destination": "https://however-hunt-motorcycles-church.trycloudflare.com/health" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

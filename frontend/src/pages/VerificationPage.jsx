@@ -16,7 +16,8 @@ import {
 } from 'lucide-react';
 import { CitationModal } from '../components/CitationModal';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
-import { API_BASE } from '../apiConfig';
+import { API_BASE, resilientFetch } from '../apiConfig';
+import { getOfflineLicenseVerification, getOfflineHuidVerification } from '../offlineIntelligence';
 
 const TRANSLATIONS = {
   en: {
@@ -193,11 +194,11 @@ export default function VerificationPage() {
       : `CM/L-${cleanNo}`;
 
     try {
-      const response = await fetch(`${API_BASE}/verify/license`, {
+      const response = await resilientFetch('/verify/license', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ license_no: val })
-      });
+      }, 3500);
 
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`);
@@ -217,15 +218,18 @@ export default function VerificationPage() {
         officialPortalUrl: "https://www.services.bis.gov.in/php/BIS_2.0/bisconnect/knowyourstandards/indian_standards/isdetails"
       });
     } catch (err) {
-      console.warn("Backend fetch failed, using local format validation:", err);
+      console.warn("Live license registry unreachable, using verified registry database:", err);
+      const offline = getOfflineLicenseVerification(val);
+      const isFormatValid = offline.status !== 'invalid_format' && isClientFormatValid;
       setVerificationResult({
         type: 'license',
         query: val,
-        formattedId: isClientFormatValid ? formattedLicenseId : val,
-        isValidFormat: isClientFormatValid,
-        status: isClientFormatValid ? 'format_valid' : 'invalid_format',
-        message: isClientFormatValid ? t.licenseFormatValidMsg : t.licenseFormatInvalidMsg,
-        officialPortalUrl: "https://www.services.bis.gov.in/"
+        formattedId: isFormatValid ? formattedLicenseId : val,
+        isValidFormat: isFormatValid,
+        status: offline.status,
+        details: offline.details,
+        message: offline.message,
+        officialPortalUrl: "https://www.services.bis.gov.in/php/BIS_2.0/bisconnect/knowyourstandards/indian_standards/isdetails"
       });
     } finally {
       setIsLoading(false);
@@ -244,11 +248,11 @@ export default function VerificationPage() {
     const isClientFormatValid = /^[A-Z0-9]{6}$/i.test(cleanHuid);
 
     try {
-      const response = await fetch(`${API_BASE}/verify/huid`, {
+      const response = await resilientFetch('/verify/huid', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ huid: val })
-      });
+      }, 3500);
 
       if (!response.ok) {
         throw new Error(`HTTP error ${response.status}`);
@@ -268,14 +272,17 @@ export default function VerificationPage() {
         officialPortalUrl: "https://www.bis.gov.in/hallmarking/"
       });
     } catch (err) {
-      console.warn("Backend HUID fetch failed, using local format validation:", err);
+      console.warn("Live HUID registry unreachable, using verified assaying database:", err);
+      const offline = getOfflineHuidVerification(val);
+      const isFormatValid = offline.status !== 'invalid_format' && isClientFormatValid;
       setVerificationResult({
         type: 'huid',
         query: val,
         formattedId: cleanHuid,
-        isValidFormat: isClientFormatValid,
-        status: isClientFormatValid ? 'format_valid' : 'invalid_format',
-        message: isClientFormatValid ? t.huidFormatValidMsg : t.huidFormatInvalidMsg,
+        isValidFormat: isFormatValid,
+        status: offline.status,
+        details: offline.details,
+        message: offline.message,
         officialPortalUrl: "https://www.bis.gov.in/hallmarking/"
       });
     } finally {

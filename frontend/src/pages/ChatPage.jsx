@@ -19,7 +19,8 @@ import { FollowUpChip } from '../components/FollowUpChip';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { MicButton } from '../components/MicButton';
 import { FeedbackButtons } from '../components/FeedbackButtons';
-import { API_BASE } from '../apiConfig';
+import { API_BASE, resilientFetch } from '../apiConfig';
+import { getOfflineChatResponse } from '../offlineIntelligence';
 
 const REFERENCE_STANDARDS = [
   {
@@ -161,7 +162,7 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE}/chat`, {
+      const response = await resilientFetch('/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -171,7 +172,7 @@ export default function ChatPage() {
           session_id: sessionId,
           language: language
         })
-      });
+      }, 3500);
 
       if (!response.ok) {
         throw new Error(`Server returned error status ${response.status}`);
@@ -194,23 +195,20 @@ export default function ChatPage() {
 
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (err) {
-      console.error("Chat error:", err);
-      setErrorMsg("Failed to communicate with Parakh core service. Please check backend connection.");
-      const fallbackErrorMsg = {
-        id: createMessageId('err'),
+      console.warn("Live backend unreachable, using built-in compliance intelligence:", err);
+      const offline = getOfflineChatResponse(query, language);
+      const assistantMsg = {
+        id: createMessageId('asst'),
         role: 'assistant',
-        content: "Unable to query the Indian Standards database. Please verify backend service availability or consult the official BIS portal at https://www.bis.gov.in/ (Toll-Free Helpline: 1800-11-2417).",
-        citations: [
-          {
-            source: "BIS National Portal",
-            url: "https://www.bis.gov.in/"
-          }
-        ],
-        followUp: [],
-        confidence: 0.0,
+        content: offline.answer,
+        citations: offline.citations || [],
+        followUp: offline.follow_up_questions || [],
+        confidence: offline.confidence,
+        fromCache: true,
+        detectedLang: language,
         timestamp: formatTimestamp()
       };
-      setMessages((prev) => [...prev, fallbackErrorMsg]);
+      setMessages((prev) => [...prev, assistantMsg]);
     } finally {
       setIsLoading(false);
       inputRef.current?.focus();
@@ -244,7 +242,31 @@ export default function ChatPage() {
   const currentSuggestions = INITIAL_SUGGESTIONS[language] || INITIAL_SUGGESTIONS.en;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <div className="space-y-4 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-6 items-start">
+      {/* Mobile Standards Horizontal Strip */}
+      <div className="lg:hidden bg-white border border-slate-200 rounded-lg p-3 shadow-xs">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+            <BookOpen className="w-3.5 h-3.5 text-slate-700" />
+            Quick Standards Reference
+          </span>
+          <span className="text-[10px] text-slate-500">Tap to Query</span>
+        </div>
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          {REFERENCE_STANDARDS.map((std) => (
+            <button
+              key={std.code}
+              type="button"
+              onClick={() => handleSend(std.query)}
+              className="px-2.5 py-1.5 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 text-left shrink-0 active:scale-95 transition"
+            >
+              <div className="font-mono text-xs font-bold text-slate-900">{std.code}</div>
+              <div className="text-[10px] text-slate-500 truncate max-w-[120px]">{std.name}</div>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Left Reference Panel - Desktop Only */}
       <aside className="hidden lg:block lg:col-span-1 bg-white border border-slate-200 rounded-lg p-4 space-y-5 shadow-xs sticky top-24">
         <div>
@@ -301,7 +323,7 @@ export default function ChatPage() {
       </aside>
 
       {/* Main Conversational Workspace */}
-      <section className="lg:col-span-3 flex flex-col bg-white border border-slate-200 rounded-lg shadow-xs overflow-hidden h-[calc(100vh-10rem)]">
+      <section className="lg:col-span-3 flex flex-col bg-white border border-slate-200 rounded-lg shadow-xs overflow-hidden h-[calc(100dvh-12rem)] sm:h-[calc(100vh-10rem)] min-h-[480px]">
         {/* Workspace Toolbar */}
         <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50 border-b border-slate-200 text-xs">
           <div className="flex items-center gap-2">
