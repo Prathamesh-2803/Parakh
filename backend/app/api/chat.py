@@ -130,7 +130,7 @@ async def chat(body: ChatRequest, request: Request) -> ChatResponse:
         conversation_history=history,
     )
 
-    llm_result = await generate(prompt=prompt, context="")
+    llm_result = await generate(prompt=prompt, context=context)
     llm_text = llm_result.get("text", "")
 
     # 6. Parse structured JSON from LLM output

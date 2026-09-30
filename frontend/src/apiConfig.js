@@ -5,7 +5,7 @@
  */
 export const API_BASE = import.meta.env.VITE_API_BASE_URL !== undefined
   ? import.meta.env.VITE_API_BASE_URL
-  : (import.meta.env.DEV ? '' : 'https://specific-anna-revenues-pulled.trycloudflare.com');
+  : (import.meta.env.DEV ? '' : 'https://railroad-villas-dancing-lip.trycloudflare.com');
 
 /**
  * Executes a fetch with a 3.5s timeout.

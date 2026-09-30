@@ -11,7 +11,8 @@ import {
   BookOpen,
   ShieldCheck,
   ExternalLink,
-  ChevronRight
+  ChevronRight,
+  Sparkles
 } from 'lucide-react';
 import { CitationModal } from '../components/CitationModal';
 import { CitationChip } from '../components/CitationChip';
@@ -144,7 +145,8 @@ export default function ChatPage() {
   }, [messages, isLoading]);
 
   const handleSend = async (textToSend) => {
-    const query = (textToSend || inputValue).trim();
+    const rawQuery = typeof textToSend === 'string' ? textToSend : (inputValue || '');
+    const query = rawQuery.trim();
     if (!query || isLoading) return;
 
     setErrorMsg(null);
@@ -161,6 +163,16 @@ export default function ChatPage() {
     setMessages((prev) => [...prev, userMsg]);
     setIsLoading(true);
 
+    // Smooth scroll down immediately to display user's query
+    setTimeout(() => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTo({
+          top: scrollContainerRef.current.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+    }, 40);
+
     try {
       const response = await resilientFetch('/chat', {
         method: 'POST',
@@ -172,7 +184,7 @@ export default function ChatPage() {
           session_id: sessionId,
           language: language
         })
-      }, 3500);
+      }, 4000);
 
       if (!response.ok) {
         throw new Error(`Server returned error status ${response.status}`);
@@ -185,7 +197,7 @@ export default function ChatPage() {
         role: 'assistant',
         content: data.answer || "No response received.",
         citations: data.citations || [],
-        followUp: data.follow_up_suggestions || [],
+        followUp: data.follow_up_suggestions || data.follow_up_questions || data.followUp || [],
         confidence: data.confidence ?? 1.0,
         requestId: data.request_id,
         fromCache: data.from_cache,
@@ -202,7 +214,7 @@ export default function ChatPage() {
         role: 'assistant',
         content: offline.answer,
         citations: offline.citations || [],
-        followUp: offline.follow_up_questions || [],
+        followUp: offline.follow_up_suggestions || offline.follow_up_questions || offline.followUp || [],
         confidence: offline.confidence,
         fromCache: true,
         detectedLang: language,
@@ -211,6 +223,14 @@ export default function ChatPage() {
       setMessages((prev) => [...prev, assistantMsg]);
     } finally {
       setIsLoading(false);
+      setTimeout(() => {
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.scrollTo({
+            top: scrollContainerRef.current.scrollHeight,
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
       inputRef.current?.focus();
     }
   };
@@ -242,31 +262,7 @@ export default function ChatPage() {
   const currentSuggestions = INITIAL_SUGGESTIONS[language] || INITIAL_SUGGESTIONS.en;
 
   return (
-    <div className="space-y-4 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-6 items-start">
-      {/* Mobile Standards Horizontal Strip */}
-      <div className="lg:hidden bg-white border border-slate-200 rounded-lg p-3 shadow-xs">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-            <BookOpen className="w-3.5 h-3.5 text-slate-700" />
-            Quick Standards Reference
-          </span>
-          <span className="text-[10px] text-slate-500">Tap to Query</span>
-        </div>
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
-          {REFERENCE_STANDARDS.map((std) => (
-            <button
-              key={std.code}
-              type="button"
-              onClick={() => handleSend(std.query)}
-              className="px-2.5 py-1.5 rounded-md border border-slate-200 bg-slate-50 hover:bg-slate-100 text-left shrink-0 active:scale-95 transition"
-            >
-              <div className="font-mono text-xs font-bold text-slate-900">{std.code}</div>
-              <div className="text-[10px] text-slate-500 truncate max-w-[120px]">{std.name}</div>
-            </button>
-          ))}
-        </div>
-      </div>
-
+    <div className="lg:grid lg:grid-cols-4 lg:gap-6 items-start">
       {/* Left Reference Panel - Desktop Only */}
       <aside className="hidden lg:block lg:col-span-1 bg-white border border-slate-200 rounded-lg p-4 space-y-5 shadow-xs sticky top-24">
         <div>
@@ -323,7 +319,7 @@ export default function ChatPage() {
       </aside>
 
       {/* Main Conversational Workspace */}
-      <section className="lg:col-span-3 flex flex-col bg-white border border-slate-200 rounded-lg shadow-xs overflow-hidden h-[calc(100dvh-10.5rem)] sm:h-[calc(100vh-9.5rem)] min-h-[420px]">
+      <section className="lg:col-span-3 flex flex-col bg-white border border-slate-200 rounded-lg shadow-xs overflow-hidden h-[calc(100dvh-8rem)] sm:h-[calc(100vh-9.5rem)] min-h-[440px]">
         {/* Workspace Toolbar */}
         <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-50 border-b border-slate-200 text-xs gap-2">
           <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
@@ -338,11 +334,31 @@ export default function ChatPage() {
               type="button"
               onClick={handleResetSession}
               title="Reset conversation"
-              className="p-1 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition cursor-pointer shrink-0"
+              className="p-1 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition cursor-pointer shrink-0 touch-manipulation"
             >
               <RotateCcw className="w-3.5 h-3.5" />
             </button>
           </div>
+        </div>
+
+        {/* Mobile Standards Horizontal Pill Bar (Inside Workspace) */}
+        <div className="lg:hidden px-2.5 py-1.5 bg-slate-100/90 border-b border-slate-200 flex items-center gap-1.5 overflow-x-auto no-scrollbar touch-scroll">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 shrink-0 flex items-center gap-1 mr-0.5">
+            <BookOpen className="w-3 h-3 text-slate-600" />
+            Standards:
+          </span>
+          {REFERENCE_STANDARDS.map((std) => (
+            <button
+              key={std.code}
+              type="button"
+              onClick={() => handleSend(std.query)}
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-white hover:bg-slate-50 active:bg-slate-200 border border-slate-200 text-slate-800 shrink-0 transition shadow-2xs cursor-pointer touch-manipulation"
+            >
+              <span className="font-mono font-bold text-slate-900">{std.code}</span>
+              <span className="text-slate-400">·</span>
+              <span className="text-slate-600 truncate max-w-[100px]">{std.name}</span>
+            </button>
+          ))}
         </div>
 
         {/* Error notification banner if any */}
@@ -427,16 +443,17 @@ export default function ChatPage() {
 
                   {/* Follow-up suggestions */}
                   {!isUser && msg.followUp && msg.followUp.length > 0 && (
-                    <div className="pt-2 border-t border-slate-100 space-y-1.5">
-                      <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                        Related Regulatory Inquiries:
-                      </span>
-                      <div className="flex flex-col sm:flex-row flex-wrap gap-1.5">
+                    <div className="pt-2.5 border-t border-slate-100 space-y-2">
+                      <div className="flex items-center gap-1.5 text-[11px] font-bold text-blue-900 uppercase tracking-wider">
+                        <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                        <span>Recommended Follow-up Questions:</span>
+                      </div>
+                      <div className="flex flex-col gap-1.5">
                         {msg.followUp.map((sugg, idx) => (
                           <FollowUpChip
                             key={idx}
                             suggestion={sugg}
-                            onClick={handleSend}
+                            onClick={(text) => handleSend(text)}
                           />
                         ))}
                       </div>
@@ -450,7 +467,7 @@ export default function ChatPage() {
                         <button
                           type="button"
                           onClick={() => copyToClipboard(msg.content, msg.id)}
-                          className="inline-flex items-center gap-1 text-[11px] text-slate-500 hover:text-slate-800 transition cursor-pointer"
+                          className="inline-flex items-center gap-1 text-[11px] text-slate-500 hover:text-slate-800 transition cursor-pointer touch-manipulation"
                         >
                           {copiedId === msg.id ? (
                             <>
@@ -504,7 +521,8 @@ export default function ChatPage() {
         <div className="p-3 sm:p-4 bg-slate-50 border-t border-slate-200 space-y-2">
           {/* Quick Questions Row - Horizontal touch-scroll on mobile */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar touch-scroll pb-1">
-            <span className="text-[10px] sm:text-[11px] font-semibold text-slate-500 mr-0.5 shrink-0">
+            <span className="text-[10px] sm:text-[11px] font-semibold text-slate-500 mr-0.5 shrink-0 flex items-center gap-1">
+              <Sparkles className="w-3 h-3 text-amber-500" />
               Suggested:
             </span>
             {currentSuggestions.slice(0, 4).map((sugg, i) => (
@@ -512,7 +530,7 @@ export default function ChatPage() {
                 key={i}
                 type="button"
                 onClick={() => handleSend(sugg)}
-                className="text-[10px] sm:text-[11px] text-slate-600 bg-white hover:bg-slate-100 border border-slate-200 rounded px-2 py-0.5 transition cursor-pointer truncate max-w-[200px] sm:max-w-[280px] shrink-0"
+                className="text-[10px] sm:text-[11px] text-slate-700 bg-white hover:bg-slate-100 active:bg-slate-200 border border-slate-200 rounded px-2 py-0.5 transition cursor-pointer truncate max-w-[200px] sm:max-w-[280px] shrink-0 touch-manipulation"
                 title={sugg}
               >
                 {sugg}
@@ -528,7 +546,7 @@ export default function ChatPage() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about Indian Standards, ISI licensing, testing labs, or QCO mandates (e.g. 'IS 4151')..."
+              placeholder="Ask about Indian Standards, ISI licensing, testing labs, or QCOs..."
               className="flex-1 py-2 sm:py-2.5 pl-2.5 sm:pl-3 pr-1 sm:pr-2 text-xs sm:text-sm text-slate-900 bg-transparent outline-none resize-none placeholder:text-slate-400 font-sans"
               disabled={isLoading}
             />
@@ -543,7 +561,7 @@ export default function ChatPage() {
                 type="button"
                 onClick={() => handleSend()}
                 disabled={!inputValue.trim() || isLoading}
-                className="px-2.5 sm:px-3.5 py-1.5 bg-[#0b2545] hover:bg-[#081a31] disabled:bg-slate-200 disabled:text-slate-400 text-white rounded text-xs font-semibold flex items-center gap-1 sm:gap-1.5 transition cursor-pointer disabled:cursor-not-allowed"
+                className="px-2.5 sm:px-3.5 py-1.5 bg-[#0b2545] hover:bg-[#081a31] disabled:bg-slate-200 disabled:text-slate-400 text-white rounded text-xs font-semibold flex items-center gap-1 sm:gap-1.5 transition cursor-pointer disabled:cursor-not-allowed touch-manipulation"
               >
                 <span>Send</span>
                 <Send className="w-3 h-3" />

@@ -192,6 +192,111 @@ export const OFFLINE_STANDARDS_DB = {
       "How long does the Manakonline application process take?",
       "How can I search recognized NABL testing laboratories?"
     ]
+  },
+
+  helmet_test: {
+    standard_code: "IS 4151:2015 Clause 7",
+    title: "Mandatory Mechanical and Impact Attenuation Testing for Helmets",
+    qco_mandatory: true,
+    scheme: "Scheme I (ISI Mark)",
+    answer: "Under IS 4151:2015 (Clause 7), two-wheeler protective helmets must pass four mandatory laboratory tests before an ISI license is granted:\n\n1. Impact Attenuation Test: Peak acceleration transmitted to the headform must not exceed 300g when dropped onto flat and hemispherical steel anvils at 7.5 m/s.\n2. Retention System Dynamic Test: Dynamic displacement must not exceed 35 mm and residual elongation < 25 mm under a 10 kg drop mass.\n3. Rigidity Test: Transverse compressive load of 630 N applied across the shell must not cause deformation exceeding 40 mm.\n4. Audibility Test: Sound attenuation must be less than 10 dB across the frequency range of 500 Hz to 3000 Hz to ensure rider situational awareness.",
+    citations: [
+      {
+        source: "IS 4151:2015",
+        clause: "Clause 7.1 to 7.5",
+        text: "Performance requirements and methods of test for protective helmets.",
+        url: "https://www.services.bis.gov.in/"
+      }
+    ],
+    followUp: [
+      "Which NABL laboratories are accredited for helmet testing?",
+      "What is the penalty for selling non-ISI helmets under BIS Act?",
+      "What are the 5 steps to get an ISI mark license?"
+    ]
+  },
+
+  helmet_penalty: {
+    standard_code: "BIS Act 2016 Section 29",
+    title: "Penal Provisions for Violation of Quality Control Orders",
+    qco_mandatory: true,
+    scheme: "Penal Enforcement",
+    answer: "Selling, manufacturing, or stocking non-BIS certified two-wheeler helmets is a cognizable criminal offense under Section 17 and Section 29 of the Bureau of Indian Standards Act, 2016:\n\n• First Offense: Imprisonment up to 2 years, or a monetary fine of minimum ₹2,00,000 (which may extend up to 10 times the value of non-conforming goods produced/sold), or both.\n• Seizure and Confiscation: Enforcement officers from BIS and local police are empowered to conduct search-and-seizure operations, confiscate uncertified inventory, and initiate criminal prosecution in Judicial Magistrate Courts.\n• Commercial Ban: The commercial establishment faces revocation of trade licenses and e-commerce platform de-listing.",
+    citations: [
+      {
+        source: "BIS Act 2016",
+        clause: "Section 29(3) & 29(4)",
+        text: "Penalties for contravention of Section 17 regarding mandatory standard marks.",
+        url: "https://www.bis.gov.in/"
+      }
+    ],
+    followUp: [
+      "What is the standard for motorcycle helmets?",
+      "How to verify the CM/L license on a helmet marking plate?",
+      "What are the 5 steps to get an ISI mark license?"
+    ]
+  },
+
+  gold_huid: {
+    standard_code: "IS 1417:2016 / HUID Guidelines",
+    title: "6-Character Hallmark Unique Identification (HUID) Verification",
+    qco_mandatory: true,
+    scheme: "Hallmarking Scheme IV",
+    answer: "Every piece of hallmarked gold jewellery legally sold in India must bear a 6-character laser-engraved alphanumeric HUID (e.g., A1B2C3). You can verify it in two ways:\n\n1. BIS Care Official App (Android/iOS): Tap 'Verify HUID', enter the 6-character code, and view the Jeweller Registration Name, Assaying Centre (AHC), Date of Hallmarking, Article Type (Ring, Bangle, Chain), and certified Purity (22K916, 18K750, 14K585).\n2. Parakh Registry Console: Navigate to the 'Verify Registry' tab above, select 'Gold Hallmarking (HUID)', and enter the code to inspect verified assay records.",
+    citations: [
+      {
+        source: "BIS Hallmarking Guidelines 2023",
+        clause: "Clause 8.1",
+        text: "HUID authenticity and consumer verification procedure.",
+        url: "https://www.bis.gov.in/hallmarking-overview/"
+      }
+    ],
+    followUp: [
+      "What is the difference between 22K (916) and 18K (750) gold?",
+      "What are the consumer compensation norms if gold purity is defective?",
+      "How do I verify a BIS license number (CM/L)?"
+    ]
+  },
+
+  isi_steps: {
+    standard_code: "Manakonline Standard Operating Procedure",
+    title: "5-Step Roadmap to Obtain BIS ISI Mark License",
+    qco_mandatory: false,
+    scheme: "Scheme I (Conformity Assessment)",
+    answer: "To secure a BIS ISI Mark license (Scheme-I) for manufacturing goods, applicants follow a structured 5-step procedure on Manakonline:\n\n1. Online Application: Register on Manakonline (manakonline.in), submit Form-V, factory layout, machinery list, and pay the ₹1,000 application fee.\n2. In-House Test Laboratory: Set up the mandatory testing laboratory and calibrated testing instruments as per the Scheme of Inspection and Testing (SIT).\n3. Preliminary Factory Audit: A designated BIS technical officer visits the manufacturing premises to audit production controls, quality management, and witness sample testing.\n4. Independent Lab Testing: Samples drawn during the audit are sealed and dispatched to an independent NABL-accredited laboratory for complete clause verification.\n5. Grant of License (CM/L): Upon receipt of passing test reports, BIS issues the operative CM/L license number with authorization to affix the ISI mark.",
+    citations: [
+      {
+        source: "BIS Conformity Assessment Regulations 2018",
+        clause: "Regulation 4 & 5",
+        text: "Procedure for Grant of License under Scheme-I.",
+        url: "https://www.manakonline.in/"
+      }
+    ],
+    followUp: [
+      "How long does the Manakonline application process take?",
+      "Which testing labs are recognized for domestic pressure cookers?",
+      "What are the mandatory testing requirements for motorcycle helmets under IS 4151?"
+    ]
+  },
+
+  water_migration: {
+    standard_code: "IS 9845 / IS 14543",
+    title: "Food Contact Plastics Overall Migration Limits",
+    qco_mandatory: true,
+    scheme: "Scheme I (ISI Mark)",
+    answer: "Plastic bottles and packaging materials intended for packaged drinking water must comply with IS 9845 ('Determination of Overall Migration of Constituents of Plastic Materials and Articles intended to come into contact with Foodstuffs'):\n\n• Maximum Overall Migration Limit: Must not exceed 60 mg/kg or 10 mg/dm² into food simulants (distilled water, 3% acetic acid, 10% ethanol).\n• Resin Identification: Containers must be made of virgin food-grade resin and prominently display the PET 1 triangular recycling emblem conforming to IS 14534.\n• Heavy Metals: Total migration of lead, cadmium, and arsenic must be undetectable under atomic absorption spectroscopy.",
+    citations: [
+      {
+        source: "IS 9845:1998",
+        clause: "Clause 4 & Table 1",
+        text: "Overall migration limits and testing methodology for food-contact plastics.",
+        url: "https://www.services.bis.gov.in/"
+      }
+    ],
+    followUp: [
+      "What is the standard for packaged drinking water under IS 14543?",
+      "How to verify the CM/L license on a packaged water bottle?",
+      "What are the 5 steps to get an ISI mark license?"
+    ]
   }
 };
 
@@ -202,11 +307,21 @@ export function getOfflineChatResponse(query, language = 'en') {
   const q = (query || '').toLowerCase();
 
   let matched = OFFLINE_STANDARDS_DB.default;
-  if (q.includes('helmet') || q.includes('4151') || q.includes('rider') || q.includes('headgear')) {
+  if (q.includes('penalty') || q.includes('punishment') || q.includes('fine') || q.includes('offense')) {
+    matched = OFFLINE_STANDARDS_DB.helmet_penalty;
+  } else if (q.includes('impact') || q.includes('acceleration') || q.includes('retention') || (q.includes('helmet') && (q.includes('parameter') || q.includes('test')))) {
+    matched = OFFLINE_STANDARDS_DB.helmet_test;
+  } else if (q.includes('verify') && (q.includes('huid') || q.includes('hallmark'))) {
+    matched = OFFLINE_STANDARDS_DB.gold_huid;
+  } else if (q.includes('5 step') || q.includes('steps to get') || (q.includes('procedure') && q.includes('manakonline')) || q.includes('how long')) {
+    matched = OFFLINE_STANDARDS_DB.isi_steps;
+  } else if (q.includes('migration') || q.includes('9845') || q.includes('food-contact') || q.includes('plastic limit')) {
+    matched = OFFLINE_STANDARDS_DB.water_migration;
+  } else if (q.includes('helmet') || q.includes('4151') || q.includes('rider') || q.includes('headgear')) {
     matched = OFFLINE_STANDARDS_DB.helmet;
   } else if (q.includes('gold') || q.includes('1417') || q.includes('huid') || q.includes('hallmark') || q.includes('jewel')) {
     matched = OFFLINE_STANDARDS_DB.gold;
-  } else if (q.includes('water') || q.includes('bottle') || q.includes('14543') || q.includes('9845') || q.includes('pet') || q.includes('plastic')) {
+  } else if (q.includes('water') || q.includes('bottle') || q.includes('14543') || q.includes('pet') || q.includes('plastic')) {
     matched = OFFLINE_STANDARDS_DB.water;
   } else if (q.includes('cooker') || q.includes('2347') || q.includes('pressure')) {
     matched = OFFLINE_STANDARDS_DB.cooker;
@@ -215,7 +330,9 @@ export function getOfflineChatResponse(query, language = 'en') {
   return {
     answer: matched.answer,
     citations: matched.citations,
-    follow_up_suggestions: matched.followUp,
+    follow_up_suggestions: matched.followUp || [],
+    follow_up_questions: matched.followUp || [],
+    followUp: matched.followUp || [],
     confidence: 0.98,
     language: language,
     from_cache: true
