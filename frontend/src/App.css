@@ -1,0 +1,12 @@
+/* Parakh Application Styles */
+/* Enterprise clean styling for tables, print, and custom elements */
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, nav, button, .no-print {
+    display: none !important;
+  }
+}

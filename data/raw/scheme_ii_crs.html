@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>About CRS</title>
+        <meta name="description" content="Pushy is an off-canvas navigation menu for your website.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+
+   <!----------bootstrap-css-------------------------------------->
+
+       <link rel="stylesheet" type="text/css" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/responsive/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/responsive/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/theme/newTheme.css"></link>
+     <link rel="shortcut icon" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/images/small_logo.ico" type="image/x-icon" />
+
+      <script type="text/javascript" src="https://www.crsbis.in/BIS/app_srv/tdc/gl/responsive/js/jquery-1.10.2.min.js"></script>
+      <script type="text/javascript" src="https://www.crsbis.in/BIS/app_srv/tdc/gl/responsive/bootstrap/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/responsive/bootstrap/css/bootstrapValidator.css">
+    <script type="text/javascript" src="https://www.crsbis.in/BIS/app_srv/tdc/gl/responsive/bootstrap/js/bootstrapValidator.js"></script>
+
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/validNumber.js" language="JavaScript" type="text/javascript"></script>
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/validemail.js" language="JavaScript" type="text/javascript"></script>
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/validString.js" language="JavaScript" type="text/javascript"></script>
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/userReg.js" language="JavaScript" type="text/javascript"></script>
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/validDate.js" language="JavaScript" type="text/javascript"></script>
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/RegistrationValidation.js" language="JavaScript" type="text/javascript"></script>
+      <script src="https://www.crsbis.in/BIS/app_srv/tdc/gl/jssrc/respond.min.js"></script>
+      <script type="text/javascript" src="https://www.crsbis.in/BIS/app_srv/tdc/gl/js/jquery.form.js"></script>
+      <script type="text/javascript" src="https://www.crsbis.in/BIS/app_srv/tdc/gl/js/basic.js"></script>
+      <script type="text/javascript" src="https://www.crsbis.in/BIS/app_srv/tdc/gl/js/jquery.simplemodal.js">  </script>
+        <link type="text/css" rel="stylesheet" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/theme/basic.css"/>
+
+        <link rel="stylesheet" type="text/css" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/theme/select2.css" />
+
+   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Inter:400,500,600,700&display=swap" rel="stylesheet">
+
+   <!--------------end of bootstrap.css--------------------------->
+
+
+        <link rel="stylesheet" href="/BIS/app_srv/tdc/BISDesign/css/normalize.css">
+        <link rel="stylesheet" href="/BIS/app_srv/tdc/BISDesign/css/demo.css">
+        <link rel="stylesheet" href="/BIS/app_srv/tdc/BISDesign/css/pushy.css">
+         <link rel="stylesheet" href="/BIS/app_srv/tdc/BISDesign/css/responsive.css">
+          <link rel="stylesheet" href="/BIS/app_srv/tdc/BISDesign/css/social-icon.css">
+        <!-- jQuery -->
+
+       <style>
+    .fa {
+    display: inline-block !important;
+    font: normal normal normal 14px/1 FontAwesome!important;
+    font-size: 15px !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    color: #fff !important;
+    margin: 0 0 0 0px !important;
+}
+.navspan{font-size:15px; margin-left:4px;}
+
+  .fa:hover {
+  	 display: inline-block !important;
+    font: normal normal normal 14px/1 FontAwesome!important;
+    font-size: 15px !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    color: #2957a3 !important;
+    margin: 0 0 0 0px !important;
+  	
+  	}
+a{
+color: #337ab7 !important;
+}
+ ul li{
+ text-align:justify; 
+ }
+
+/* =========================================================
+   About CRS â modern redesign layer
+   Scoped to #crs-about so nothing outside this page is touched.
+   No hrefs, script sources, ids referenced by JS, or onload
+   handlers are altered anywhere in this document.
+   ========================================================= */
+#crs-about{
+  --ink:        #10233d;
+  --ink-soft:   #46586e;
+  --paper:      #f6f8fb;
+  --card:       #ffffff;
+  --line:       #dfe6ee;
+  --navy:       #0b3d6b;
+  --navy-deep:  #082a4a;
+  --saffron:    #1f78c1; /* accent recolored to blue for a single blue theme */
+  --teal:       #0e7c73;
+  --radius:     10px;
+  font-family: 'Inter', 'PT Sans', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 0 0 56px;
+}
+#crs-about *{ box-sizing: border-box; }
+#crs-about .crs-wrap{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- hero ---- */
+#crs-about .crs-hero{
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 62%, #12578f 100%);
+  color: #eef4fb;
+  padding: 46px 0 40px;
+  margin-bottom: 0;
+  border-bottom: 4px solid var(--saffron);
+}
+#crs-about .crs-hero + .crs-wrap{
+  margin-top: 40px;
+}
+#crs-about .crs-hero .crs-wrap{
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+#crs-about .crs-hero-text{ flex: 1 1 420px; min-width: 280px; }
+#crs-about .crs-eyebrow{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: .01em;
+  color: #bcd4ec;
+  margin: 0 0 6px;
+}
+#crs-about .crs-hero h1{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: #ffffff;
+}
+#crs-about .crs-hero p{
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #d9e6f3;
+  max-width: 62ch;
+  margin: 0;
+}
+#crs-about .crs-hero-figure{
+  flex: 0 0 260px;
+  max-width: 260px;
+}
+#crs-about .crs-hero-figure img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.25);
+  box-shadow: 0 18px 34px rgba(4,20,38,.35);
+}
+
+/* ---- section heading ---- */
+#crs-about .crs-section-title{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--navy-deep);
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---- notification timeline (chronological, so ordered treatment is used) ---- */
+#crs-about .crs-timeline{
+  list-style: none;
+  margin: 0 0 44px;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+#crs-about .crs-timeline > li{
+  display: flex;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+#crs-about .crs-timeline > li:last-child{ border-bottom: none; }
+#crs-about .crs-timeline > li::before{
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--saffron);
+}
+#crs-about .crs-timeline p{
+  margin: 0;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  font-size: .98rem;
+}
+#crs-about .crs-timeline a{
+  font-weight: 700;
+  text-decoration: none;
+}
+#crs-about .crs-timeline a:hover{ text-decoration: underline; }
+
+/* ---- three-up info cards ---- */
+#crs-about .crs-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 44px;
+}
+#crs-about .crs-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+#crs-about .crs-card-media{
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #eef2f6;
+}
+#crs-about .crs-card-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#crs-about .crs-card-body{
+  padding: 18px 20px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#crs-about .crs-card-body h2{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--navy-deep);
+  margin: 0 0 10px;
+}
+#crs-about .crs-card-body p{
+  font-size: .93rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+}
+#crs-about .crs-card-body ul{
+  margin: 0;
+  padding-left: 18px;
+}
+#crs-about .crs-card-body ul li{
+  font-size: .93rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+#crs-about .crs-card-body a{
+  font-weight: 700;
+  text-decoration: none;
+}
+#crs-about .crs-card-body a:hover{ text-decoration: underline; }
+
+/* ---- responsive ---- */
+@media (max-width: 900px){
+  #crs-about .crs-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  #crs-about .crs-hero{ padding: 34px 0 30px; }
+  #crs-about .crs-hero h1{ font-size: 1.7rem; }
+  #crs-about .crs-hero-figure{ flex-basis: 100%; max-width: 220px; margin: 0 auto; }
+  #crs-about .crs-grid{ grid-template-columns: 1fr; }
+  #crs-about .crs-timeline > li{ padding: 16px 18px; }
+}
+
+/* reduced motion / focus accessibility */
+#crs-about a:focus-visible,
+#crs-about button:focus-visible{
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce){
+  #crs-about *{ transition: none !important; }
+}
+     </style>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body onload="loadStateUser('');loader();" style="background-color:#fff">
+
+<aside id="sticky-social">
+    <ul>
+        <li><a href="https://www.facebook.com/IndianStandards" target="_blank"><img src="/BIS/app_srv/tdc/BISDesign/img/fb.jpg" title="Facebook"></a></li>
+        <li><a href="http://twitter.com/IndianStandards" target="_blank"><img src="/BIS/app_srv/tdc/BISDesign/img/twitter.jpg" title="Twitter"></a></li>
+        <li><a href="  https://www.linkedin.com/company/bureau-of-indian-standards-official" target="_blank"><img src="/BIS/app_srv/tdc/BISDesign/img/linkedin.jpg" title="linkedin"></a></li>
+         <li><a href="https://www.youtube.com/channel/UCY14t6PrQBFge-8X_4MdoiQ"  target="_blank"><img src="/BIS/app_srv/tdc/BISDesign/img/youtube.jpg" title="Youtube"></a></li>
+         <li><a href="https://www.instagram.com/indianstandards"  target="_blank"><img src="/BIS/app_srv/tdc/BISDesign/img/insta.jpg" title="Intagram"></a></li>
+    </ul>
+</aside>
+         <header class="site-header push">
+  		<div class="container-fluid hbk">
+  <div class="row">
+  <div class="col-md-4 col-sm-3 col-xs-12 col-lg-4">
+  <button class="menu-btn" style="float: left;">&#9776; Menu</button>
+       
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-12 col-lg-4">
+  <div class="wrap_logo"> <a href="/BIS/index.do"><!-- <img src="/BIS/app_srv/tdc/BISDesign/img/bislogo1.png" class="bislogod img-responsive"> --><img src="/BIS/app_srv/tdc/BISDesign/img/bislogo.png" class="bislogog img-responsive"></a></div>
+  </div>
+  <div class="col-md-5 col-sm-5 col-xs-12 col-lg-4 pad-top">
+ 	<div class="e-brochure-lefts pull-right">
+         <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://play.google.com/store/apps/details?id=com.bis.smartregistrationapp" target="_blank"><img class="img-reponsive" src="/BIS/app_srv/tdc/BISDesign/img/ibkr-mobile-hand.png"  style="width:34px; height:34px; "></a></p><p> <a href="https://play.google.com/store/apps/details?id=in.cdac.bisapp" target="_blank" style="color:#fff;"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mobile App</span></a></p>
+         </div>
+        	<div class="e-brochure-lefts pull-right">
+         <p><a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/brochure.pdf" target="_blank"><img class="img-reponsive" src="/BIS/app_srv/tdc/BISDesign/img/e-brochure.png"  style="width:34px; height:34px; "></a></p><p> <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/brochure.pdf" target="_blank" style="color:#fff;"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E-Brochure</span></a></p>
+         </div>
+         
+       
+        </div>
+        
+  </div>
+  
+       </div>
+        </header>
+
+        
+
+        
+
+        <!-- Pushy Menu -->
+               <!-- Pushy Menu -->
+         <nav class="pushy pushy-left" data-focus="#first-link">
+            <div class="pushy-content">
+                      <ul>
+                 <li class="pushy-link"><a href="/BIS/index.do"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; <span class="navspan">Home</span></a></li>
+                 <li class="pushy-link"><a href="/BIS/about-crs.do"><i class="fa fa-bullseye" aria-hidden="true"></i>&nbsp;<span class="navspan">About CRS</span></a></li>
+                 
+                  <li class="pushy-link"><a href="/BIS/registration-page.do"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;<span class="navspan">Registration </span></a></li>
+                  
+                    <li class="pushy-link"><a href="/BIS/inclusion_renewal.do"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<span class="navspan">Inclusion and Renewal</span></a></li>
+                      
+                    
+                     <li class="pushy-link"><a href="/BIS/change_management.do"><i class="fa fa-refresh" aria-hidden="true"></i> &nbsp;<span class="navspan">Other Change Requests</span></a></li>
+                  
+                  <li class="pushy-link"><a href="/BIS/bis_lab.do"><i class="fa fa-flask" aria-hidden="true"></i>&nbsp;<span class="navspan"> BIS Recognised Labs</span></a></li>
+                  
+                  <li class="pushy-link"><a href="/BIS/wtsnew.do"><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;<span class="navspan">List of Circulars</span></a></li>  
+                      <li class="pushy-link"><a href="/BIS/app_srv/tdc/gl/docs/Revised_Fee_Structure.pdf" target="_blank"><i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;<span class="navspan">Fee Structure</span></a></li> 
+                <li class="pushy-link"><a href="/BIS/forms.do"><i class="fa fa-envelope"></i>&nbsp;<span class="navspan">Forms and Formats</span></a></li> 
+                <li class="pushy-link"><a href="/BIS/app_srv/tdc/gl/jsp/faqtab.jsp"><i class="fa fa-question-circle"></i>&nbsp;<span class="navspan">FAQ</span></a></li>
+         
+                 <li class="pushy-link"><a href="/BIS/contact.do"><i class="fa fa-envelope"></i>&nbsp;<span class="navspan">Contact Us</span></a></li>      
+                   
+                   
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Site Overlay -->
+        <div class="site-overlay"></div>
+
+
+                <!-- Your Content -->
+        <!-- Your Content -->
+     <div id="container" class="container">
+      <div id="main">
+
+
+ <!------------start the content-------------------->
+ <div id="crs-about">
+
+   <!-- Hero -->
+   <div class="crs-hero" style="margin-top: 100px;">
+     <div class="crs-wrap">
+       <div class="crs-hero-text">
+         <p class="crs-eyebrow">Bureau of Indian Standards</p>
+         <h1>About CRS</h1>
+         <p>Compulsory Registration Scheme (CRS) is operated under Bureau of Indian Standards (Conformity Assessment) Regulations, 2018 (Scheme II of Schedule II), as per the BIS Act 2016. The Scheme aims to provide momentum to the rapidly expanding sectors of Electronics &amp; IT, while simultaneously protecting Indian consumers from spurious and substandard products. It has upgraded the competitiveness of domestic manufacturers and given Indian consumers the right to enjoy world-class, quality-compliant goods.</p>
+       </div>
+       <div class="crs-hero-figure">
+         <img src="/BIS/app_srv/tdc/BISDesign/img/about-1.jpg" alt="" title="">
+       </div>
+     </div>
+   </div>
+
+   <div class="crs-wrap">
+
+     <!-- Statutory notifications timeline -->
+     <h2 class="crs-section-title">Statutory Notifications</h2>
+     <ul class="crs-timeline">
+       <li>
+         <p>Ministry of Electronics &amp; Information Technology (MeitY) (erstwhile DeitY) has notified
+         <a class="text-success" href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/gazette_notification_2012_10_03.pdf" target="_blank"><b>"Electronics and Information Technology Goods (Requirement for Compulsory Registration) Order, 2012"</b></a> on 03 October 2012 for fifteen categories of electronics items.
+         <a href=" https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/New_Gazette_Notification_2014_11_13.pdf" target="_blank"><b>Fifteen more product categories</b></a> were added by MeitY under this order on 07 November 2014. MeitY has also notified Indian Standard for Indian Language Support for Mobile Phones on 24 October 2016.
+         <a href=" https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Gazette_notification_phase_3_CRO_1.pdf" target="_blank"><b>Another thirteen product categories</b></a> were added by MeitY under this order on 17 August 2017.
+         <a href = "https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Another_twelve_product_categories.pdf" target ="_blank"><b>Another twelve product categories</b></a> were added by MeitY under this order on 01 April 2020.
+         <a href = "https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Another_seven_product_categories.pdf" target ="_blank"><b>Another seven product categories</b></a> were added by MeitY under this order on 01 Oct 2020. MeitY has also notified Indian Standard for
+         <a href = "https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Digital_Television_Receiver_for_Satellite_Broadcast_Transmission_Specification.pdf" target ="_blank"><b>Digital Television Receiver for Satellite Broadcast Transmission Specification</b></a> on 26 April 2023.</p>
+       </li>
+       <li>
+         <p>Ministry of New and Renewal Energy (MNRE) has notified five products under
+         <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/MNRE_notification_1.pdf" target="_blank"><b>Solar Photovoltaics, Systems, Devices and Components Goods (Requirements for Compulsory Registration) Order, 2017</b></a> dated 30 August 2017.</p>
+       </li>
+       <li>
+         <p>Ministry of Chemicals and Fertilizers has notified one product under
+         <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Ortho_Phosphoric_Acid_(Quality_Control)_Order_2021.pdf" target="_blank"><b>Ortho Phosphoric Acid (Quality Control) Order, 2021</b></a> dated 15 June 2021, one more product has been added under the
+         <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Polyphosphoric_Acid_(Quality_Control)_Order_2021.pdf" target="_blank"><b>Polyphosphoric Acid (Quality Control) Order, 2021</b></a> dated 24 December 2021. Further, one more product has been added under
+         <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Trimethyl_Phosphite_(Quality_Control)_Order_2022.pdf" target="_blank"><b>Trimethyl Phosphite (Quality Control) Order, 2022</b></a> dated 05 April 2022.</p>
+       </li>
+      <!--  <li>
+         <p>Ministry of Textiles has notified one product under
+         <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Cotton_Bales_(Quality_Control)_Order_2023" target="_blank"><b>Cotton Bales (Quality Control) Order, 2023</b></a> dated 28 February 2023.</p>
+       </li> --> 
+       <li>
+         <p>As per the Orders, no person shall manufacture or store for sale, import, sell or distribute goods which do not conform to the Indian standard specified in the order and do not bear the Standard Mark with unique registration number obtained from BIS.</p>
+       </li>
+       <li>
+         <p>Bureau of Indian Standards grants licence to the manufacturers to use or apply Standard Mark with unique R-number, through registration based on self-declaration of conformity for goods and articles as per Indian Standards. The grant of licence and its operation under Compulsory Registration Scheme are carried out as per the conformity assessment scheme under
+         <a href="https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/BIS_Conformity_Assessment_Regulation_2018_Gazette_Notification.pdf#page=221" target="_blank"><b>Scheme - II of Schedule - II of BIS (Conformity Assessment) Regulations, 2018'</b></a>.</p>
+       </li>
+     </ul>
+
+     <!-- Row 1: who / products / standard mark -->
+     <div class="crs-grid">
+       <div class="crs-card">
+         <div class="crs-card-media">
+           <img src="/BIS/app_srv/tdc/BISDesign/img/who_can_apply.jpg" alt="" title="">
+         </div>
+         <div class="crs-card-body">
+           <h2>Who Can Apply for CRS</h2>
+           <p>Manufacturer (factory owner) of any product, which comes under the ambit of the Compulsory Registration Order (CRO) notified by Ministry of Electronics and Information Technology (MeitY), Ministry of New and Renewable Energy (MNRE), Ministry of Chemicals and Fertilizers and Ministry of Textiles.</p>
+         </div>
+       </div>
+
+       <div class="crs-card">
+         <div class="crs-card-media">
+           <img src="/BIS/app_srv/tdc/BISDesign/img/about-2.jpg" alt="" title="">
+         </div>
+         <div class="crs-card-body">
+           <h2>Products under CRS</h2>
+           <ul>
+             <li>Amplifiers With Input Power 2000w And Above</li>
+             <li>Automatic Data Processing Machine</li>
+             <li>Automatic Data Processing Machine</li>
+             <li>Electronic Games (Video)</li>
+             <li>Electronic Musical Systems With Input Power 200w And Above.... <a href="/BIS/products-bis.do">Read More &raquo;</a></li>
+           </ul>
+         </div>
+       </div>
+
+       <div class="crs-card">
+         <div class="crs-card-media">
+           <img src="/BIS/app_srv/tdc/BISDesign/img/standards.jpg" alt="" title="">
+         </div>
+         <div class="crs-card-body">
+           <h2>Standard Mark and Labeling Guidelines</h2>
+           <p><a href="/BIS/app_srv/tdc/BISDesign/docs/StandardMarkGuidelines.pdf" target="_blank">Click here</a> for guidelines for use of Standard Mark and labelling requirements under BIS Compulsory Registration Scheme.</p>
+         </div>
+       </div>
+     </div>
+
+     <!-- Row 2: BIS / MeitY / MNRE notifications -->
+     <div class="crs-grid">
+       <div class="crs-card">
+         <div class="crs-card-media">
+           <img src="/BIS/app_srv/tdc/BISDesign/img/about-4.jpg" alt="" title="">
+         </div>
+         <div class="crs-card-body">
+           <h2>Notifications and Guidelines by BIS</h2>
+           <ul>
+             <li>BIS is operating Compulsory Registration Scheme (CRS) as per Scheme - II of Schedule - II of BIS (Conformity Assessment) Regulations, 2018.
+             <a href=" https://www.crsbis.in/BIS/bis_notification.do" target="_blank">Click here</a> to refer BIS Act 2016, BIS Rules 2018, BIS (Conformity Assessment) Regulations 2018 and various guidelines framed there under.</li>
+           </ul>
+         </div>
+       </div>
+
+       <div class="crs-card">
+         <div class="crs-card-media">
+           <img src="/BIS/app_srv/tdc/BISDesign/img/about-5.jpg" alt="" title="">
+         </div>
+         <div class="crs-card-body">
+           <h2>MeitY Notifications</h2>
+           <ul>
+             <li>Electronics &amp; Information Technology Goods (Requirements for Compulsory Registration) Order, 2012 Dated 7th September 2012</li>
+             <li>Expansion of list of items under Electronics &amp; Information Technology Goods (Requirements for Compulsory Registration) Order, 2012 dated 13th November 2014.... <a href="/BIS/meity_notification.do">Read More &raquo;</a></li>
+           </ul>
+         </div>
+       </div>
+
+       <div class="crs-card">
+         <div class="crs-card-media">
+           <img src="/BIS/app_srv/tdc/BISDesign/img/about-3.jpg" alt="" title="">
+         </div>
+         <div class="crs-card-body">
+           <h2>MNRE Notifications</h2>
+           <ul>
+             <li>Ministry of New and Renewal Energy (MNRE) has notified 6 products through notification dated 05 September 2017.</li>
+             <li>Revised schedule and enforcement date of Solar Photovoltaic Systems/Devices/Components Goods Order 2017.... <a href="/BIS/mnre_notification.do">Read More &raquo;</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+
+   </div>
+ </div>
+ <!---------------------end the content---------------------->
+</div>
+</div>
+<div>&nbsp;</div>
+<footer class="site-footer push" ><p>This site is best viewed in Chrome, Mozilla and Safari.</p><span style="color:#fff;">&copy; 2019 . All Rights Reserved | Design by </span> <a href="https://bis.gov.in" target="blank" style="color:#fff;font-size:12px;margin-top:5px; ">Bureau of Indian Standards</a></footer>
+
+        <!-- Pushy JS -->
+        <script src="/BIS/app_srv/tdc/BISDesign/js/pushy.min.js"></script>
+        
+
+
+
+
+
+    </body>
+</html>

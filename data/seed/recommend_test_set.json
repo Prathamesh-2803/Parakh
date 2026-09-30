@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "input": "I manufacture LED bulbs and lamps for home lighting",
+    "expected_product": "LED Lamps & Bulbs (Self-ballasted)",
+    "expected_standard": "IS 16102 (Part 1)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 2,
+    "input": "We make safety helmets for motorcycle riders",
+    "expected_product": "Helmets (Two-Wheeler Riders)",
+    "expected_standard": "IS 4151",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 3,
+    "input": "Domestic LPG gas cylinders for household cooking",
+    "expected_product": "LPG Gas Cylinders (Domestic)",
+    "expected_standard": "IS 3196 (Part 1)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 4,
+    "input": "Manufacturing 43 grade ordinary portland cement",
+    "expected_product": "Ordinary Portland Cement (43 Grade)",
+    "expected_standard": "IS 269",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 5,
+    "input": "We produce mobile phone power adapters and USB wall chargers",
+    "expected_product": "Mobile Phone Power Adapters & Chargers",
+    "expected_standard": "IS 13252 (Part 1)",
+    "expected_scheme": "CRS",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 6,
+    "input": "Rechargeable lithium-ion battery packs for electronics",
+    "expected_product": "Rechargeable Lithium-ion Batteries",
+    "expected_standard": "IS 16046 (Part 2)",
+    "expected_scheme": "CRS",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 7,
+    "input": "Mild steel tubes and ERW steel pipes for general engineering",
+    "expected_product": "Mild Steel Tubes & Pipes",
+    "expected_standard": "IS 1239 (Part 1)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 8,
+    "input": "We craft 22k gold jewellery, bangles and rings",
+    "expected_product": "Gold Jewellery and Artefacts",
+    "expected_standard": "IS 1417",
+    "expected_scheme": "HALLMARK",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 9,
+    "input": "Silver ornaments, utensils and jewellery items",
+    "expected_product": "Silver Jewellery and Artefacts",
+    "expected_standard": "IS 2112",
+    "expected_scheme": "HALLMARK",
+    "expected_mandatory": false,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 10,
+    "input": "Packaged drinking water in 1-litre bottles (processed)",
+    "expected_product": "Packaged Drinking Water (Other than Mineral Water)",
+    "expected_standard": "IS 14543",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 11,
+    "input": "Packaged natural mineral water bottled directly at source/spring",
+    "expected_product": "Packaged Natural Mineral Water",
+    "expected_standard": "IS 13428",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 12,
+    "input": "Portable fire extinguishers for commercial buildings and factories",
+    "expected_product": "Portable Fire Extinguishers",
+    "expected_standard": "IS 15683",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 13,
+    "input": "Aluminium and stainless steel domestic pressure cookers",
+    "expected_product": "Domestic Pressure Cookers",
+    "expected_standard": "IS 2347",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 14,
+    "input": "Domestic electrical switches and sockets for domestic wiring",
+    "expected_product": "Domestic Electrical Switches",
+    "expected_standard": "IS 3854",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 15,
+    "input": "Solar photovoltaic PV modules and solar panels",
+    "expected_product": "Solar Photovoltaic (PV) Modules",
+    "expected_standard": "IS 14286",
+    "expected_scheme": "CRS",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 16,
+    "input": "Infant milk substitutes and baby milk formula powder",
+    "expected_product": "Infant Milk Substitutes / Milk Powder",
+    "expected_standard": "IS 1165",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 17,
+    "input": "Electric and plastic toys for children and toddlers",
+    "expected_product": "Toys (Electric and Non-Electric)",
+    "expected_standard": "IS 9873 (Part 1)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 18,
+    "input": "Leather safety footwear and industrial safety boots",
+    "expected_product": "Safety Footwear / Leather Safety Boots",
+    "expected_standard": "IS 15298 (Part 2)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 19,
+    "input": "Commercial plywood sheets for furniture and interior woodworking",
+    "expected_product": "Plywood for General Purposes",
+    "expected_standard": "IS 303",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 20,
+    "input": "TMT rebars and high strength deformed steel bars for building construction",
+    "expected_product": "High Strength Deformed Steel Bars (TMT Rebars)",
+    "expected_standard": "IS 1786",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 21,
+    "input": "Laptops, notebooks, and tablet computers for IT offices",
+    "expected_product": "Laptops, Notebooks and Tablets",
+    "expected_standard": "IS 13252 (Part 1)",
+    "expected_scheme": "CRS",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 22,
+    "input": "Automotive CNG cylinders for compressed natural gas vehicles",
+    "expected_product": "Automotive CNG Fuel Cylinders",
+    "expected_standard": "IS 15490",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 23,
+    "input": "Compound cattle feed and animal feeds for livestock",
+    "expected_product": "Cattle Feed / Animal Feed Compounds",
+    "expected_standard": "IS 2052",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 24,
+    "input": "Sanitary napkins and feminine hygiene pads",
+    "expected_product": "Sanitary Napkins / Menstrual Pads",
+    "expected_standard": "IS 5405",
+    "expected_scheme": "ISI",
+    "expected_mandatory": false,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 25,
+    "input": "UPVC pipes and fittings for potable drinking water supply",
+    "expected_product": "UPVC Pipes for Potable Water Supply",
+    "expected_standard": "IS 4985",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 26,
+    "input": "I produce self-ballasted LED lighting fixtures and lamps",
+    "expected_product": "LED Lamps & Bulbs (Self-ballasted)",
+    "expected_standard": "IS 16102 (Part 1)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 27,
+    "input": "We make protective headgear and helmets for two wheelers",
+    "expected_product": "Helmets (Two-Wheeler Riders)",
+    "expected_standard": "IS 4151",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": false
+  },
+  {
+    "id": 28,
+    "input": "Drinking water in sealed plastic bottles",
+    "expected_product": "Packaged Drinking Water (Other than Mineral Water)",
+    "expected_standard": "IS 14543",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": true
+  },
+  {
+    "id": 29,
+    "input": "Steel bars and steel tubes for building and plumbing",
+    "expected_product": "Mild Steel Tubes & Pipes",
+    "expected_standard": "IS 1239 (Part 1)",
+    "expected_scheme": "ISI",
+    "expected_mandatory": true,
+    "should_be_ambiguous": true
+  },
+  {
+    "id": 30,
+    "input": "Precious metallic jewellery and ornaments",
+    "expected_product": "Gold Jewellery and Artefacts",
+    "expected_standard": "IS 1417",
+    "expected_scheme": "HALLMARK",
+    "expected_mandatory": true,
+    "should_be_ambiguous": true
+  }
+]

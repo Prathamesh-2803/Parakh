@@ -1,0 +1,406 @@
+{
+  "_comment": "DEMO DATA for Parakh. Product taxonomy for compliance recommendation engine.",
+  "schemes": [
+    {
+      "scheme_code": "ISI",
+      "scheme_name": "ISI Mark (Scheme-I)",
+      "description": "Product certification scheme for Indian Standards. Mandatory or voluntary mark issued after factory audit and sample testing.",
+      "source_url": "https://www.bis.gov.in/product-certification/scheme-i-mark-scheme/",
+      "fetched_at": "2026-09-28T12:00:00Z"
+    },
+    {
+      "scheme_code": "CRS",
+      "scheme_name": "Compulsory Registration Scheme (Scheme-II)",
+      "description": "Self-declaration of conformity based on testing at BIS-recognized laboratories for electronics and IT goods.",
+      "source_url": "https://www.crsbis.in/",
+      "fetched_at": "2026-09-28T12:00:00Z"
+    },
+    {
+      "scheme_code": "FMCS",
+      "scheme_name": "Foreign Manufacturers Certification Scheme",
+      "description": "Certification scheme for overseas manufacturers exporting products covered under BIS schemes to India.",
+      "source_url": "https://www.bis.gov.in/fmcs/",
+      "fetched_at": "2026-09-28T12:00:00Z"
+    },
+    {
+      "scheme_code": "HALLMARK",
+      "scheme_name": "Hallmarking Scheme",
+      "description": "Mandatory purity certification for gold and silver articles with 6-digit Hallmark Unique Identification (HUID).",
+      "source_url": "https://www.bis.gov.in/hallmarking-overview/",
+      "fetched_at": "2026-09-28T12:00:00Z"
+    }
+  ],
+  "products": [
+    {
+      "product_name": "LED Lamps & Bulbs (Self-ballasted)",
+      "category": "Lighting & Electronics",
+      "applicable_standard": "IS 16102 (Part 1)",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Quality Control Order for LED Lamps 2017",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Helmets (Two-Wheeler Riders)",
+      "category": "Safety Equipment",
+      "applicable_standard": "IS 4151",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Two-Wheeler Helmets (Quality Control) Order 2020",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "LPG Gas Cylinders (Domestic)",
+      "category": "Pressure Vessels",
+      "applicable_standard": "IS 3196 (Part 1)",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Gas Cylinders Rules / Mandatory ISI",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Ordinary Portland Cement (43 Grade)",
+      "category": "Construction Materials",
+      "applicable_standard": "IS 269",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Cement (Quality Control) Order 2003",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Mobile Phone Power Adapters & Chargers",
+      "category": "Consumer Electronics",
+      "applicable_standard": "IS 13252 (Part 1)",
+      "scheme_code": "CRS",
+      "mandatory": true,
+      "qco_order": "Electronics and IT Goods (Requirement for Compulsory Registration) Order",
+      "source_url": "https://www.crsbis.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Rechargeable Lithium-ion Batteries",
+      "category": "Energy Storage & Electronics",
+      "applicable_standard": "IS 16046 (Part 2)",
+      "scheme_code": "CRS",
+      "mandatory": true,
+      "qco_order": "MeitY Compulsory Registration Scheme",
+      "source_url": "https://www.crsbis.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Mild Steel Tubes & Pipes",
+      "category": "Steel & Metal Products",
+      "applicable_standard": "IS 1239 (Part 1)",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Steel and Steel Products (Quality Control) Order",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Gold Jewellery and Artefacts",
+      "category": "Precious Metals",
+      "applicable_standard": "IS 1417",
+      "scheme_code": "HALLMARK",
+      "mandatory": true,
+      "qco_order": "Hallmarking of Gold Jewellery and Artefacts Order 2020",
+      "source_url": "https://www.bis.gov.in/hallmarking-overview/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Silver Jewellery and Artefacts",
+      "category": "Precious Metals",
+      "applicable_standard": "IS 2112",
+      "scheme_code": "HALLMARK",
+      "mandatory": false,
+      "qco_order": null,
+      "source_url": "https://www.bis.gov.in/hallmarking-overview/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Packaged Drinking Water (Other than Mineral Water)",
+      "category": "Food & Beverages",
+      "applicable_standard": "IS 14543",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "FSSAI / BIS Mandatory Certification for Drinking Water",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Packaged Natural Mineral Water",
+      "category": "Food & Beverages",
+      "applicable_standard": "IS 13428",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Mandatory ISI Scheme for Natural Mineral Water",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Portable Fire Extinguishers",
+      "category": "Fire Safety",
+      "applicable_standard": "IS 15683",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Fire Fighting Equipment (Quality Control) Order",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Domestic Pressure Cookers",
+      "category": "Kitchen Appliances",
+      "applicable_standard": "IS 2347",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Domestic Pressure Cooker (Quality Control) Order 2020",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Domestic Electrical Switches",
+      "category": "Electrical Accessories",
+      "applicable_standard": "IS 3854",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Electrical Wires, Cables and Appliances QCO",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Solar Photovoltaic (PV) Modules",
+      "category": "Renewable Energy",
+      "applicable_standard": "IS 14286",
+      "scheme_code": "CRS",
+      "mandatory": true,
+      "qco_order": "MNRE Solar Photovoltaics Quality Control Order 2017",
+      "source_url": "https://www.crsbis.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Infant Milk Substitutes / Milk Powder",
+      "category": "Dairy & Infant Food",
+      "applicable_standard": "IS 1165",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Infant Milk Substitutes Mandatory BIS Certification",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Toys (Electric and Non-Electric)",
+      "category": "Children Products & Toys",
+      "applicable_standard": "IS 9873 (Part 1)",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Toys (Quality Control) Order 2020",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Safety Footwear / Leather Safety Boots",
+      "category": "Personal Protective Equipment",
+      "applicable_standard": "IS 15298 (Part 2)",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Footwear made from Leather and other materials (QCO) 2020",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Plywood for General Purposes",
+      "category": "Wood & Timber Products",
+      "applicable_standard": "IS 303",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Wood and Wood Products (Quality Control) Order 2023",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "High Strength Deformed Steel Bars (TMT Rebars)",
+      "category": "Steel & Construction",
+      "applicable_standard": "IS 1786",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Steel and Steel Products QCO",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Laptops, Notebooks and Tablets",
+      "category": "IT & Electronic Hardware",
+      "applicable_standard": "IS 13252 (Part 1)",
+      "scheme_code": "CRS",
+      "mandatory": true,
+      "qco_order": "Electronics and IT Goods Compulsory Registration Scheme",
+      "source_url": "https://www.crsbis.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Automotive CNG Fuel Cylinders",
+      "category": "Automotive Components",
+      "applicable_standard": "IS 15490",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Automotive Gas Cylinder Quality Order",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Cattle Feed / Animal Feed Compounds",
+      "category": "Agriculture & Feeds",
+      "applicable_standard": "IS 2052",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Cattle Feeds (Quality Control) Order",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "Sanitary Napkins / Menstrual Pads",
+      "category": "Hygiene & Medical Textiles",
+      "applicable_standard": "IS 5405",
+      "scheme_code": "ISI",
+      "mandatory": false,
+      "qco_order": null,
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "product_name": "UPVC Pipes for Potable Water Supply",
+      "category": "Plumbing & Piping",
+      "applicable_standard": "IS 4985",
+      "scheme_code": "ISI",
+      "mandatory": true,
+      "qco_order": "Plastic and Polymer Products QCO",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    }
+  ],
+  "labs": [
+    {
+      "lab_name": "NABL Accredited Testing Lab - Delhi (DEMO)",
+      "lab_code": "LAB-DEL-001",
+      "address": "Sector 18, Dwarka, New Delhi",
+      "state": "Delhi",
+      "city": "New Delhi",
+      "accreditation_scope": "Electronics, Electrical Safety, LED Lamps, Batteries, EMC Testing",
+      "contact": "demo-lab-delhi@example.com",
+      "source_url": "https://www.bis.gov.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "lab_name": "BIS Recognized Testing Lab - Mumbai (DEMO)",
+      "lab_code": "LAB-MUM-002",
+      "address": "Andheri East, Mumbai",
+      "state": "Maharashtra",
+      "city": "Mumbai",
+      "accreditation_scope": "Construction Materials, Cement, Steel Rebars, Pipes, Pressure Cookers",
+      "contact": "demo-lab-mumbai@example.com",
+      "source_url": "https://www.bis.gov.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "lab_name": "Southern Regional Testing Centre - Bengaluru (DEMO)",
+      "lab_code": "LAB-BLR-003",
+      "address": "Peenya Industrial Area, Bengaluru",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "accreditation_scope": "Solar PV Modules, IT Hardware, Toys, Helmets, Switches",
+      "contact": "demo-lab-blr@example.com",
+      "source_url": "https://www.bis.gov.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "lab_name": "Northern Regional Food & Water Lab - Chandigarh (DEMO)",
+      "lab_code": "LAB-CHD-004",
+      "address": "Industrial Area Phase 1, Chandigarh",
+      "state": "Punjab",
+      "city": "Chandigarh",
+      "accreditation_scope": "Packaged Drinking Water, Mineral Water, Milk Powder, Food Products",
+      "contact": "demo-lab-chd@example.com",
+      "source_url": "https://www.bis.gov.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    }
+  ],
+  "hallmarking_centres": [
+    {
+      "centre_name": "AHC Delhi - Karol Bagh (DEMO)",
+      "centre_code": "AHC-DEL-101",
+      "address": "Karol Bagh, New Delhi",
+      "state": "Delhi",
+      "city": "New Delhi",
+      "contact": "ahc-delhi@example.com",
+      "source_url": "https://www.bis.gov.in/hallmarking-overview/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "centre_name": "AHC Mumbai - Zaveri Bazaar (DEMO)",
+      "centre_code": "AHC-MUM-201",
+      "address": "Zaveri Bazaar, Mumbai",
+      "state": "Maharashtra",
+      "city": "Mumbai",
+      "contact": "ahc-mumbai@example.com",
+      "source_url": "https://www.bis.gov.in/hallmarking-overview/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    }
+  ],
+  "fees": [
+    {
+      "scheme_code": "ISI",
+      "fee_type": "Application Fee (Small Scale)",
+      "amount": 5000.0,
+      "currency": "INR",
+      "description": "One-time application fee for ISI mark license (small scale / micro enterprise)",
+      "source_url": "https://www.bis.gov.in/product-certification/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    },
+    {
+      "scheme_code": "CRS",
+      "fee_type": "Registration Fee",
+      "amount": 10000.0,
+      "currency": "INR",
+      "description": "One-time registration fee for Compulsory Registration Scheme (CRS)",
+      "source_url": "https://www.crsbis.in/",
+      "fetched_at": "2026-09-28T12:00:00Z",
+      "is_demo": true
+    }
+  ]
+}

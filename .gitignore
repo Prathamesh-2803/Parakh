@@ -1,0 +1,57 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.venv310/
+venv/
+env/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment variables & secrets
+.env
+.env.*
+*.env
+backend/.env
+frontend/.env
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+build/
+
+# Data files (keep structure via .gitkeep)
+data/chroma/
+data/*.db
+
+# Temporary debug scripts / outputs
+debug_*.txt
+debug_*.py
+
+# OS generated
+# Media & Video files
+*.mp4
+*.webm
+*.mov
+*.avi
+parakh_prototype_demo.mp4

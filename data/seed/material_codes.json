@@ -1,0 +1,167 @@
+[
+  {
+    "category": "plastic_resin_code",
+    "code": "1",
+    "label": "PETE / PET",
+    "material_name": "Polyethylene Terephthalate",
+    "common_uses": "Soft drink bottles, mineral water bottles, food jars, strapping, polyester textile fibers",
+    "notes": "Widely recycled; commonly used for clear beverage containers and packaging",
+    "applicable_standards": []
+  },
+  {
+    "category": "plastic_resin_code",
+    "code": "2",
+    "label": "HDPE",
+    "material_name": "High-Density Polyethylene",
+    "common_uses": "Milk containers, detergent bottles, shampoo bottles, chemical drums, pipes, toys",
+    "notes": "Excellent chemical resistance and moisture barrier properties",
+    "applicable_standards": []
+  },
+  {
+    "category": "plastic_resin_code",
+    "code": "3",
+    "label": "PVC",
+    "material_name": "Polyvinyl Chloride",
+    "common_uses": "Plumbing pipes, electrical conduit, cable insulation, window frames, medical tubing",
+    "notes": "Available in rigid and flexible forms; contains chlorine",
+    "applicable_standards": []
+  },
+  {
+    "category": "plastic_resin_code",
+    "code": "4",
+    "label": "LDPE",
+    "material_name": "Low-Density Polyethylene",
+    "common_uses": "Plastic bags, squeeze bottles, shrink wrap, flexible container lids, agricultural films",
+    "notes": "Flexible, tough, and transparent or translucent",
+    "applicable_standards": []
+  },
+  {
+    "category": "plastic_resin_code",
+    "code": "5",
+    "label": "PP",
+    "material_name": "Polypropylene",
+    "common_uses": "Food containers, yogurt cups, bottle caps, automotive battery cases, microwaveable ware",
+    "notes": "High thermal resistance and fatigue resistance; suitable for hot liquids",
+    "applicable_standards": []
+  },
+  {
+    "category": "plastic_resin_code",
+    "code": "6",
+    "label": "PS",
+    "material_name": "Polystyrene",
+    "common_uses": "Disposable cutlery, foam drink cups, packaging peanuts, CD jewel cases, meat trays",
+    "notes": "Rigid and brittle in solid form; expanded form (EPS) used for thermal insulation",
+    "applicable_standards": []
+  },
+  {
+    "category": "plastic_resin_code",
+    "code": "7",
+    "label": "OTHER / PC",
+    "material_name": "Polycarbonate / Other Plastics",
+    "common_uses": "Reusable water bottles, food containers, electronics housings, safety goggles, automotive lenses",
+    "notes": "Catch-all category for plastics other than resin codes 1-6, including Polycarbonate, ABS, Acrylic, and multi-layer materials",
+    "applicable_standards": []
+  },
+  {
+    "category": "gold_hallmark",
+    "code": "999",
+    "label": "24K",
+    "material_name": "24 Karat Fine Gold (99.9% purity)",
+    "common_uses": "Gold bullion bars, minted coins, investment ingots",
+    "notes": "Highest commercial gold purity; too soft for standard daily-wear jewellery",
+    "applicable_standards": []
+  },
+  {
+    "category": "gold_hallmark",
+    "code": "916",
+    "label": "22K",
+    "material_name": "22 Karat Gold (91.6% purity)",
+    "common_uses": "Traditional Indian gold jewellery, bangles, chains, necklaces, bridal ornaments",
+    "notes": "Primary purity grade for hallmarked gold jewellery in India",
+    "applicable_standards": []
+  },
+  {
+    "category": "gold_hallmark",
+    "code": "875",
+    "label": "21K",
+    "material_name": "21 Karat Gold (87.5% purity)",
+    "common_uses": "Specialty jewellery, regional traditional ornaments, rings",
+    "notes": "Recognized under hallmarking standards for fine gold jewellery",
+    "applicable_standards": []
+  },
+  {
+    "category": "gold_hallmark",
+    "code": "750",
+    "label": "18K",
+    "material_name": "18 Karat Gold (75.0% purity)",
+    "common_uses": "Diamond-studded jewellery, modern rings, luxury watches, delicate gemstone settings",
+    "notes": "Higher mechanical hardness compared to 22K; ideal for gem-setting",
+    "applicable_standards": []
+  },
+  {
+    "category": "gold_hallmark",
+    "code": "585",
+    "label": "14K",
+    "material_name": "14 Karat Gold (58.5% purity)",
+    "common_uses": "Contemporary everyday jewellery, lightweight fashion ornaments, earrings",
+    "notes": "Durable and budget-friendly gold alloy",
+    "applicable_standards": []
+  },
+  {
+    "category": "gold_hallmark",
+    "code": "375",
+    "label": "9K",
+    "material_name": "9 Karat Gold (37.5% purity)",
+    "common_uses": "Affordable fashion jewellery, charms, accessories",
+    "notes": "Minimum karatage recognized under standard gold hallmarking grades",
+    "applicable_standards": []
+  },
+  {
+    "category": "silver_hallmark",
+    "code": "925",
+    "label": "Sterling Silver",
+    "material_name": "Sterling Silver (92.5% purity)",
+    "common_uses": "Silver jewellery, utensils, tableware, pooja articles, gift ware",
+    "notes": "Standard international and Indian purity grade for sterling silver (alloyed with 7.5% copper)",
+    "applicable_standards": []
+  },
+  {
+    "category": "silver_hallmark",
+    "code": "900",
+    "label": "Coin Silver",
+    "material_name": "Coin Silver (90.0% purity)",
+    "common_uses": "Silver coins, decorative medallions, traditional silver artefacts",
+    "notes": "Recognized silver purity grade for minted artefacts and coins",
+    "applicable_standards": []
+  },
+  {
+    "category": "metal_grade",
+    "code": "SS304",
+    "label": "Grade 304 / AISI 304",
+    "material_name": "Austenitic Stainless Steel (18/8)",
+    "common_uses": "Kitchen sinks, cookware, food processing equipment, architectural trim",
+    "notes": "Nominal 18% chromium and 8% nickel; corrosion-resistant austenitic grade",
+    "needs_research": true,
+    "applicable_standards": []
+  },
+  {
+    "category": "metal_grade",
+    "code": "SS316",
+    "label": "Grade 316 / AISI 316",
+    "material_name": "Marine Grade Stainless Steel (18/10/2)",
+    "common_uses": "Chemical containers, marine hardware, medical implants, high-salinity food processing",
+    "notes": "Contains 2-3% molybdenum for superior resistance to pitting and chloride corrosion",
+    "needs_research": true,
+    "applicable_standards": []
+  },
+  {
+    "category": "metal_grade",
+    "code": "FE500",
+    "label": "Fe 500 / Fe 500D",
+    "material_name": "High Yield Strength Deformed TMT Steel Bars",
+    "common_uses": "Reinforced concrete construction, bridges, residential and commercial buildings",
+    "notes": "Thermo-mechanically treated steel rebar with minimum yield strength of 500 MPa",
+    "needs_research": true,
+    "applicable_standards": []
+  }
+]
