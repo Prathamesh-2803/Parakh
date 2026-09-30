@@ -299,8 +299,8 @@ export default function VerificationPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Institutional Header Section */}
-      <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-xs">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+      <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-6 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
@@ -308,7 +308,7 @@ export default function VerificationPage() {
               </span>
               <span className="text-xs text-slate-400 font-mono">Module 03</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+            <h1 className="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight">
               {t.bannerTitle}
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
@@ -316,21 +316,21 @@ export default function VerificationPage() {
             </p>
           </div>
 
-          <div className="shrink-0 pt-1">
+          <div className="shrink-0 pt-0.5 self-start sm:self-auto">
             <LanguageSwitcher value={language} onChange={setLanguage} />
           </div>
         </div>
       </div>
 
       {/* Segmented Tab Navigation */}
-      <div className="flex border-b border-slate-200 gap-2">
+      <div className="flex border-b border-slate-200 gap-2 overflow-x-auto no-scrollbar">
         <button
           type="button"
           onClick={() => {
             setActiveTab('license');
             setVerificationResult(null);
           }}
-          className={`py-2.5 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 ${
+          className={`py-2 px-3 sm:py-2.5 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 shrink-0 ${
             activeTab === 'license'
               ? 'border-slate-900 text-slate-900 bg-white rounded-t'
               : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -346,7 +346,7 @@ export default function VerificationPage() {
             setActiveTab('huid');
             setVerificationResult(null);
           }}
-          className={`py-2.5 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 ${
+          className={`py-2 px-3 sm:py-2.5 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 shrink-0 ${
             activeTab === 'huid'
               ? 'border-slate-900 text-slate-900 bg-white rounded-t'
               : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -359,7 +359,7 @@ export default function VerificationPage() {
 
       {/* License Tab Search Form */}
       {activeTab === 'license' && (
-        <div className="bg-white border border-slate-200 rounded-lg p-5 sm:p-6 space-y-4 shadow-xs">
+        <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-6 space-y-4 shadow-xs">
           <div className="space-y-1">
             <h3 className="text-sm font-bold text-slate-900">
               {t.licenseHeading}
@@ -375,7 +375,7 @@ export default function VerificationPage() {
               value={licenseInput}
               onChange={(e) => setLicenseInput(e.target.value)}
               placeholder={t.licensePlaceholder}
-              className="flex-1 px-3.5 py-2.5 bg-white border border-slate-300 rounded text-xs sm:text-sm font-mono text-slate-900 uppercase focus:border-slate-800 focus:ring-1 focus:ring-slate-800 outline-none transition"
+              className="flex-1 px-3 sm:px-3.5 py-2 sm:py-2.5 bg-white border border-slate-300 rounded text-xs sm:text-sm font-mono text-slate-900 uppercase focus:border-slate-800 focus:ring-1 focus:ring-slate-800 outline-none transition"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   e.preventDefault();
@@ -387,7 +387,7 @@ export default function VerificationPage() {
               type="button"
               onClick={() => handleVerifyLicense()}
               disabled={!licenseInput.trim() || isLoading}
-              className="px-5 py-2.5 bg-[#0b2545] hover:bg-[#081a31] text-white text-xs font-semibold rounded transition disabled:opacity-50 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+              className="w-full sm:w-auto px-5 py-2.5 bg-[#0b2545] hover:bg-[#081a31] text-white text-xs font-semibold rounded transition disabled:opacity-50 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
             >
               <Search className="w-3.5 h-3.5" />
               <span>{isLoading ? t.checkingBtn : t.verifyLicenseBtn}</span>
@@ -425,7 +425,7 @@ export default function VerificationPage() {
 
       {/* HUID Tab Search Form */}
       {activeTab === 'huid' && (
-        <div className="bg-white border border-slate-200 rounded-lg p-5 sm:p-6 space-y-4 shadow-xs">
+        <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-6 space-y-4 shadow-xs">
           <div className="space-y-1">
             <h3 className="text-sm font-bold text-slate-900">
               {t.huidHeading}
@@ -442,7 +442,7 @@ export default function VerificationPage() {
               onChange={(e) => setHuidInput(e.target.value)}
               placeholder={t.huidPlaceholder}
               maxLength={6}
-              className="flex-1 px-3.5 py-2.5 bg-white border border-slate-300 rounded text-xs sm:text-sm font-mono tracking-widest text-slate-900 uppercase focus:border-slate-800 focus:ring-1 focus:ring-slate-800 outline-none transition"
+              className="flex-1 px-3 sm:px-3.5 py-2 sm:py-2.5 bg-white border border-slate-300 rounded text-xs sm:text-sm font-mono tracking-widest text-slate-900 uppercase focus:border-slate-800 focus:ring-1 focus:ring-slate-800 outline-none transition"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   e.preventDefault();
@@ -454,7 +454,7 @@ export default function VerificationPage() {
               type="button"
               onClick={() => handleVerifyHUID()}
               disabled={!huidInput.trim() || isLoading}
-              className="px-5 py-2.5 bg-[#0b2545] hover:bg-[#081a31] text-white text-xs font-semibold rounded transition disabled:opacity-50 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+              className="w-full sm:w-auto px-5 py-2.5 bg-[#0b2545] hover:bg-[#081a31] text-white text-xs font-semibold rounded transition disabled:opacity-50 cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
             >
               <Search className="w-3.5 h-3.5" />
               <span>{isLoading ? t.checkingBtn : t.verifyHuidBtn}</span>
@@ -462,7 +462,7 @@ export default function VerificationPage() {
           </div>
 
           {/* Quick Test Samples */}
-          <div className="flex flex-wrap items-center gap-2 text-xs pt-1 border-t border-slate-100">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs pt-1 border-t border-slate-100">
             <span className="text-slate-500 font-medium text-[11px]">{t.quickTest}</span>
             <button
               type="button"
@@ -494,7 +494,7 @@ export default function VerificationPage() {
       {verificationResult && (
         <div className="bg-white border border-slate-300 rounded-lg shadow-sm overflow-hidden space-y-0">
           {/* Certificate Header Bar */}
-          <div className="p-5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div
                 className={`w-9 h-9 rounded flex items-center justify-center shrink-0 border ${
@@ -579,7 +579,7 @@ export default function VerificationPage() {
           </div>
 
           {/* Details Body */}
-          <div className="p-5 sm:p-6 space-y-4">
+          <div className="p-4 sm:p-6 space-y-4">
             <p className={`text-xs sm:text-sm leading-relaxed ${
               verificationResult.isValidFormat ? 'text-slate-700' : 'text-rose-700 font-medium'
             }`}>
@@ -588,32 +588,32 @@ export default function VerificationPage() {
 
             {/* License Details Table */}
             {verificationResult.details && verificationResult.details.manufacturer_name && (
-              <div className="border border-slate-200 rounded overflow-hidden">
-                <table className="w-full text-xs text-left">
+              <div className="border border-slate-200 rounded overflow-x-auto touch-scroll">
+                <table className="w-full text-xs text-left min-w-[280px]">
                   <tbody className="divide-y divide-slate-200">
                     <tr className="bg-slate-50">
-                      <th className="py-2.5 px-4 font-semibold text-slate-600 w-1/3">Licensee Entity:</th>
-                      <td className="py-2.5 px-4 font-bold text-slate-900">{verificationResult.details.manufacturer_name}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 w-1/3 min-w-[105px] align-top">Licensee Entity:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-bold text-slate-900 break-words align-top">{verificationResult.details.manufacturer_name}</td>
                     </tr>
                     <tr>
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Brand Name:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.brand_name || 'N/A'}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Brand Name:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.brand_name || 'N/A'}</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Product & Standard:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.product_name} • <span className="font-mono font-semibold">{verificationResult.details.applicable_standard}</span></td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Product & Standard:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.product_name} • <span className="font-mono font-semibold">{verificationResult.details.applicable_standard}</span></td>
                     </tr>
                     <tr>
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Certification Scheme:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.scheme}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Certification Scheme:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.scheme}</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Validity Period:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.valid_from} to {verificationResult.details.valid_until}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Validity Period:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.valid_from} to {verificationResult.details.valid_until}</td>
                     </tr>
                     <tr>
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Manufacturing Facility:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.factory_address}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Manufacturing Facility:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.factory_address}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -622,28 +622,28 @@ export default function VerificationPage() {
 
             {/* HUID Details Table */}
             {verificationResult.details && verificationResult.details.jeweller_name && (
-              <div className="border border-slate-200 rounded overflow-hidden">
-                <table className="w-full text-xs text-left">
+              <div className="border border-slate-200 rounded overflow-x-auto touch-scroll">
+                <table className="w-full text-xs text-left min-w-[280px]">
                   <tbody className="divide-y divide-slate-200">
                     <tr className="bg-slate-50">
-                      <th className="py-2.5 px-4 font-semibold text-slate-600 w-1/3">Registered Jeweller:</th>
-                      <td className="py-2.5 px-4 font-bold text-slate-900">{verificationResult.details.jeweller_name}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 w-1/3 min-w-[105px] align-top">Registered Jeweller:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-bold text-slate-900 break-words align-top">{verificationResult.details.jeweller_name}</td>
                     </tr>
                     <tr>
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Jeweller Registration No:</th>
-                      <td className="py-2.5 px-4 font-mono font-medium text-slate-800">{verificationResult.details.jeweller_registration_no || 'N/A'}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Jeweller Registration No:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-mono font-medium text-slate-800 break-words align-top">{verificationResult.details.jeweller_registration_no || 'N/A'}</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Purity & Article Description:</th>
-                      <td className="py-2.5 px-4 font-bold text-slate-900">{verificationResult.details.purity} • {verificationResult.details.article_type}</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Purity & Article Description:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-bold text-slate-900 break-words align-top">{verificationResult.details.purity} • {verificationResult.details.article_type}</td>
                     </tr>
                     <tr>
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Assaying & Hallmarking Centre:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.ahc_name} (<span className="font-mono">{verificationResult.details.ahc_code}</span>)</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Assaying & Hallmarking Centre:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.ahc_name} (<span className="font-mono">{verificationResult.details.ahc_code}</span>)</td>
                     </tr>
                     <tr className="bg-slate-50">
-                      <th className="py-2.5 px-4 font-semibold text-slate-600">Hallmarking Date & Weight:</th>
-                      <td className="py-2.5 px-4 font-medium text-slate-800">{verificationResult.details.hallmarking_date} ({verificationResult.details.weight_grams} grams)</td>
+                      <th className="py-2.5 px-3 sm:px-4 font-semibold text-slate-600 align-top">Hallmarking Date & Weight:</th>
+                      <td className="py-2.5 px-3 sm:px-4 font-medium text-slate-800 break-words align-top">{verificationResult.details.hallmarking_date} ({verificationResult.details.weight_grams} grams)</td>
                     </tr>
                   </tbody>
                 </table>

@@ -435,8 +435,8 @@ export default function RecommendPage() {
   return (
     <div className="max-w-5xl mx-auto space-y-6">
       {/* Institutional Header Section */}
-      <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-xs">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+      <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-6 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-bold text-slate-700 uppercase tracking-wider bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
@@ -444,7 +444,7 @@ export default function RecommendPage() {
               </span>
               <span className="text-xs text-slate-400 font-mono">Module 02</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+            <h1 className="text-lg sm:text-2xl font-bold text-slate-900 tracking-tight">
               {t.bannerTitle}
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
@@ -452,21 +452,21 @@ export default function RecommendPage() {
             </p>
           </div>
 
-          <div className="shrink-0 pt-1">
+          <div className="shrink-0 pt-0.5 self-start sm:self-auto">
             <LanguageSwitcher value={language} onChange={setLanguage} />
           </div>
         </div>
       </div>
 
       {/* Segmented Mode Selector Tabs */}
-      <div className="flex border-b border-slate-200 gap-2">
+      <div className="flex border-b border-slate-200 gap-2 overflow-x-auto no-scrollbar">
         <button
           type="button"
           onClick={() => {
             setActiveTab('text');
             setErrorMsg(null);
           }}
-          className={`py-2.5 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 ${
+          className={`py-2 px-3 sm:py-2.5 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 shrink-0 ${
             activeTab === 'text'
               ? 'border-slate-900 text-slate-900 bg-white rounded-t'
               : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -482,7 +482,7 @@ export default function RecommendPage() {
             setActiveTab('image');
             setErrorMsg(null);
           }}
-          className={`py-2.5 px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 ${
+          className={`py-2 px-3 sm:py-2.5 sm:px-4 text-xs sm:text-sm font-semibold border-b-2 transition-colors cursor-pointer flex items-center gap-2 shrink-0 ${
             activeTab === 'image'
               ? 'border-slate-900 text-slate-900 bg-white rounded-t'
               : 'border-transparent text-slate-500 hover:text-slate-800'
@@ -495,7 +495,7 @@ export default function RecommendPage() {
 
       {/* Text Input Console */}
       {activeTab === 'text' && (
-        <div className="bg-white border border-slate-200 rounded-lg p-5 sm:p-6 space-y-4 shadow-xs">
+        <div className="bg-white border border-slate-200 rounded-lg p-4 sm:p-6 space-y-4 shadow-xs">
           <label className="block text-xs sm:text-sm font-semibold text-slate-900">
             {t.productLabel}
           </label>
@@ -507,7 +507,7 @@ export default function RecommendPage() {
                 value={productDesc}
                 onChange={(e) => setProductDesc(e.target.value)}
                 placeholder={t.inputPlaceholder}
-                className="w-full bg-transparent px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none font-sans"
+                className="w-full bg-transparent px-3 py-2 sm:px-3.5 sm:py-2.5 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 outline-none font-sans"
                 onKeyDown={(e) => {
                   if (e.key === 'Enter') {
                     e.preventDefault();
@@ -526,7 +526,7 @@ export default function RecommendPage() {
               type="button"
               onClick={() => handleRecommend()}
               disabled={!productDesc.trim() || isLoading}
-              className="px-5 py-2.5 bg-[#0b2545] hover:bg-[#081a31] text-white text-xs font-semibold rounded transition disabled:opacity-50 flex items-center justify-center gap-1.5 shrink-0 cursor-pointer"
+              className="w-full sm:w-auto px-5 py-2.5 bg-[#0b2545] hover:bg-[#081a31] text-white text-xs font-semibold rounded transition disabled:opacity-50 flex items-center justify-center gap-1.5 shrink-0 cursor-pointer"
             >
               <Search className="w-3.5 h-3.5" />
               <span>{isLoading ? t.analyzing : t.findCompliance}</span>

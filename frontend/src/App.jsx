@@ -19,8 +19,8 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased">
         {/* Top Government / Official Identification Bar */}
-        <div className="bg-[#0b2545] text-slate-300 text-xs py-1.5 px-4 sm:px-8 border-b border-white/10 flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2 text-[11px] sm:text-xs">
+        <div className="bg-[#0b2545] text-slate-300 text-xs py-1 px-2.5 sm:px-6 lg:px-8 border-b border-white/10 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+          <div className="flex items-center gap-1.5 text-[10px] sm:text-xs">
             <span className="font-semibold text-slate-100 tracking-wide">
               GOVERNMENT OF INDIA
             </span>
@@ -29,18 +29,18 @@ export default function App() {
               Ministry of Consumer Affairs, Food & Public Distribution
             </span>
             <span className="text-slate-500 hidden md:inline">•</span>
-            <span className="text-slate-200 font-medium">
-              Bureau of Indian Standards (BIS) Intelligence Workbench
+            <span className="text-slate-200 font-medium truncate">
+              BIS Intelligence Workbench
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-3 text-[10px] sm:text-xs">
             <a
               href="tel:1800112417"
               className="hover:text-white flex items-center gap-1.5 transition text-slate-300"
             >
-              <PhoneCall className="w-3 h-3 text-amber-400" />
-              <span>National BIS Helpline: <strong className="text-white">1800-11-2417</strong></span>
+              <PhoneCall className="w-3 h-3 text-amber-400 shrink-0" />
+              <span><span className="hidden sm:inline">National BIS Helpline: </span><strong className="text-white font-mono">1800-11-2417</strong></span>
             </a>
             <span className="hidden sm:inline text-slate-600">|</span>
             <a
@@ -50,15 +50,15 @@ export default function App() {
               className="hover:text-white flex items-center gap-1 transition text-slate-300 hover:underline"
             >
               <span>bis.gov.in</span>
-              <ExternalLink className="w-3 h-3 text-slate-400" />
+              <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" />
             </a>
           </div>
         </div>
 
         {/* Main Application Navbar */}
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-14 sm:h-16 gap-2 sm:gap-4">
+          <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-13 sm:h-16 gap-1.5 sm:gap-4">
               {/* Product Identity */}
               <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded bg-[#0b2545] text-white flex items-center justify-center font-bold text-xs sm:text-sm tracking-wider">
@@ -80,12 +80,12 @@ export default function App() {
               </div>
 
               {/* Navigation Tabs - Responsive Segmented Controls */}
-              <nav className="flex items-center gap-1 overflow-x-auto no-scrollbar py-1">
+              <nav className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto no-scrollbar py-1">
                 <NavLink
                   to="/"
                   end
                   className={({ isActive }) =>
-                    `flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-colors shrink-0 ${
+                    `flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-colors shrink-0 ${
                       isActive
                         ? 'bg-slate-900 text-white shadow-xs'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -98,7 +98,7 @@ export default function App() {
                 <NavLink
                   to="/recommend"
                   className={({ isActive }) =>
-                    `flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-colors shrink-0 ${
+                    `flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-colors shrink-0 ${
                       isActive
                         ? 'bg-slate-900 text-white shadow-xs'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -111,7 +111,7 @@ export default function App() {
                 <NavLink
                   to="/verify"
                   className={({ isActive }) =>
-                    `flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-colors shrink-0 ${
+                    `flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md transition-colors shrink-0 ${
                       isActive
                         ? 'bg-slate-900 text-white shadow-xs'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -132,7 +132,7 @@ export default function App() {
         </header>
 
         {/* Main Content Area */}
-        <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <main className="flex-1 max-w-7xl w-full mx-auto px-2.5 sm:px-6 lg:px-8 py-3.5 sm:py-6">
           <Routes>
             <Route path="/" element={<ChatPage />} />
             <Route path="/recommend" element={<RecommendPage />} />
@@ -143,7 +143,7 @@ export default function App() {
         {/* Enterprise Government/Regulatory Footer */}
         <footer className="bg-white border-t border-slate-200 mt-auto text-xs text-slate-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pb-6 border-b border-slate-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-6 border-b border-slate-200">
               {/* Col 1 */}
               <div className="space-y-2">
                 <span className="font-semibold text-slate-900 uppercase tracking-wider text-[11px] block">

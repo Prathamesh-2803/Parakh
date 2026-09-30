@@ -5,24 +5,24 @@ export function CitationModal({ show, onClose, citation }) {
   if (!show || !citation) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/50 backdrop-blur-xs">
       <div
-        className="relative w-full max-w-lg bg-white rounded-lg shadow-xl border border-slate-300 overflow-hidden"
+        className="relative w-full max-w-lg max-h-[90vh] bg-white rounded-lg shadow-xl border border-slate-300 flex flex-col overflow-hidden"
         role="dialog"
         aria-modal="true"
         aria-labelledby="citation-title"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3.5 bg-slate-50 border-b border-slate-200">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-3 bg-slate-50 border-b border-slate-200 shrink-0">
           <div className="flex items-center gap-2">
             <div className="p-1.5 bg-slate-200 text-slate-800 rounded">
               <FileText className="w-4 h-4" />
             </div>
             <div>
-              <h3 id="citation-title" className="text-sm font-semibold text-slate-900">
+              <h3 id="citation-title" className="text-xs sm:text-sm font-semibold text-slate-900">
                 Official Document Citation
               </h3>
-              <p className="text-xs text-slate-500">Bureau of Indian Standards Reference</p>
+              <p className="text-[10px] sm:text-xs text-slate-500">Bureau of Indian Standards Reference</p>
             </div>
           </div>
           <button
@@ -35,7 +35,7 @@ export function CitationModal({ show, onClose, citation }) {
         </div>
 
         {/* Content */}
-        <div className="p-5 space-y-4">
+        <div className="p-4 sm:p-5 space-y-4 overflow-y-auto touch-scroll flex-1">
           <div className="space-y-1">
             <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
               Standard / Publication

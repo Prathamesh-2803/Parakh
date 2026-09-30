@@ -99,7 +99,7 @@ export function FeedbackButtons({
       </button>
 
       {showCommentBox && (
-        <div className="absolute bottom-8 right-0 z-30 w-72 bg-white border border-slate-300 rounded-md shadow-lg p-3 space-y-2">
+        <div className="absolute bottom-8 right-0 z-30 w-64 sm:w-72 max-w-[calc(100vw-2.5rem)] bg-white border border-slate-300 rounded-md shadow-lg p-3 space-y-2">
           <div className="flex items-center justify-between text-xs font-semibold text-slate-800 border-b border-slate-100 pb-1.5">
             <span className="flex items-center gap-1.5">
               <MessageSquare className="w-3.5 h-3.5 text-slate-600" />

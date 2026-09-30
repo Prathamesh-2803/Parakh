@@ -14,7 +14,7 @@ export function LanguageSwitcher({ value = 'en', onChange, className = '' }) {
               key={lang.code}
               type="button"
               onClick={() => onChange(lang.code)}
-              className={`px-2.5 py-1 text-xs font-medium rounded transition-colors cursor-pointer ${
+              className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium rounded transition-colors cursor-pointer shrink-0 ${
                 isActive
                   ? 'bg-slate-900 text-white font-semibold'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
